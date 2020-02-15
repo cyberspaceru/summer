@@ -1,0 +1,15 @@
+Entity L1[0]:
+  Entity L2:
+    Int L3: 10
+    Entity L3:
+      Int L4: 10
+      Entity L4:
+        Int L5: 10
+        Entity L5:
+          Int L6: 10
+  Int L1[0]: 10
+  Int L1[1]: 10
+  Int L1[2]: 10
+  String L1: 001
+Entity L1[1]:
+  Int L1: 10

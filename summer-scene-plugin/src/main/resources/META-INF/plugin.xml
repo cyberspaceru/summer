@@ -1,0 +1,25 @@
+<idea-plugin>
+    <id>summer-scene-plugin</id>
+    <name>Summer Scene</name>
+    <vendor email="cyberspaceroot@gmail.com">Ilya Tatsiy</vendor>
+
+    <description><![CDATA[
+    Plugin for Summer Scene Framework provides the next features:
+    <ul>
+        <li>Merging file tree of a scene</li>
+        <li>Adding a test name for Scene file nodes from Sky</li>
+        <li>Adding a test name for Scene editor tabs from Sky</li>
+    </ul>
+    ]]></description>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="ru.qa.summer.scene.plugin.services.TestRailService"/>
+        <treeStructureProvider implementation="ru.qa.summer.scene.plugin.SceneMergerTreeStructureProvider"/>
+        <projectViewNodeDecorator implementation="ru.qa.summer.scene.plugin.SceneProjectViewNodeDecorator"/>
+        <editorTabTitleProvider implementation="ru.qa.summer.scene.plugin.SceneEditorTabTitleProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

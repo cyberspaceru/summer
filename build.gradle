@@ -1,0 +1,49 @@
+plugins {
+    id "org.sonarqube" version "2.7.1"
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    configurations.all {
+        exclude group: "junit", module: "junit"
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    group 'ru.qa.summer'
+    version '1.0.0-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    test {
+        systemProperty "file.encoding", "utf-8"
+        useJUnitPlatform()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    dependencies {
+        compile 'org.jetbrains:annotations:17.0.0'
+        compile 'io.rest-assured:rest-assured:4.1.2'
+        compile 'org.apache.commons:commons-lang3:3.9'
+        compile 'org.aeonbits.owner:owner:1.0.10'
+        compile 'org.reflections:reflections:0.9.11'
+        compile 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+        compile 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+        compileOnly 'org.apache.logging.log4j:log4j-api:2.12.1'
+        compileOnly 'org.apache.logging.log4j:log4j-core:2.12.1'
+        compileOnly 'org.apache.logging.log4j:log4j-slf4j-impl:2.12.1'
+        compile 'org.projectlombok:lombok:1.18.10'
+        annotationProcessor 'org.projectlombok:lombok:1.18.10'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.10'
+    }
+}

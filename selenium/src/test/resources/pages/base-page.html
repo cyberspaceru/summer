@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Base page</title>
+    <meta name="description" content="Testing purpose">
+    <meta name="author" content="Ilya Tatsii">
+</head>
+<body>
+<p id="page-title"><strong>Page Title</strong></p>
+<div id="section" style="border-style: solid;border-width: 4px 20px 4px 20px;">
+    <div id="section-label">This is a section with a textarea</div>
+    <textarea id="section-textarea" placeholder="Textarea into a section"></textarea>
+    <ol id="section-list" start=0>
+        <li>
+            <button type="button">List Item 1 Button</button>
+        </li>
+        <li>
+            <div style="border-style: solid;border-width: 1px 2px 1px 2px;"><strong>List Item 2 (Inside some
+                section)</strong>
+                <button type="button">List Item 2 Button</button>
+            </div>
+        </li>
+        <li>
+            <ol start=0>
+                <li>
+                    <div style="border-style: solid;border-width: 1px 2px 1px 2px;"><strong>List Sub-Item 3.1 (Inside
+                        some section)</strong>
+                        <button type="button">List Sub-Item 3.1 Button</button>
+                    </div>
+                </li>
+                <li>List Sub-Item 3.1</li>
+                <li>List Sub-Item 3.1</li>
+            </ol>
+        </li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+        <li>List Item 6</li>
+        <li>List Item 7</li>
+    </ol>
+    <div id="sub-section" style="border-style: solid;border-width: 4px 20px 4px 20px;">
+        <div id="sub-section-label">This is a sub-section with a table</div>
+        <table id="sub-section-table" border="1">
+            <tbody>
+            <tr>
+                <th>Header-1</th>
+                <th>Header-2</th>
+            </tr>
+            <tr>
+                <td>Label-h1.1</td>
+                <td>
+                    <button type="button">Button-h1.1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Label-h1.2</td>
+                <td>
+                    <button type="button">Button-h1.2</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

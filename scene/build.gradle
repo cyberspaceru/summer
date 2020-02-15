@@ -1,0 +1,40 @@
+plugins {
+    id 'maven'
+    id 'maven-publish'
+}
+
+tasks.create('sourceJar', Jar) {
+    dependsOn tasks.classes
+    from sourceSets.main.allSource
+    archiveClassifier.set("sources")
+    extension 'jar'
+    group 'build'
+}
+
+publishing {
+    repositories {
+        maven {
+            url project.properties['nexus-snapshot-url']
+            credentials {
+                username = project.properties['nexus-username']
+                password = project.properties['nexus-password']
+            }
+        }
+    }
+    publications {
+        maven(MavenPublication) {
+            groupId = 'ru.qa.summer'
+            artifactId = 'scene'
+            version = project.properties['version']
+
+            from components.java
+            artifact sourceJar
+        }
+    }
+}
+
+dependencies {
+    compile project(':context')
+    compile 'com.codepine.api:testrail-api-java-client:2.0.1'
+    compile 'net.rcarz:jira-client:0.5'
+}

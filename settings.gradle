@@ -1,0 +1,9 @@
+rootProject.name = 'summer'
+include ':appium',
+        ':context',
+        ':core',
+        ':data-generator',
+        ':scene',
+        ':selenium',
+        ':summer-scene-plugin',
+        ':support'

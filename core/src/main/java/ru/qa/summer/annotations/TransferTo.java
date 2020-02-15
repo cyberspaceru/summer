@@ -1,0 +1,14 @@
+package ru.qa.summer.annotations;
+
+import ru.qa.summer.Page;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface TransferTo {
+    Class<? extends Page> value();
+}
